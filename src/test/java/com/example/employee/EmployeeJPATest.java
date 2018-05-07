@@ -37,6 +37,7 @@ public class EmployeeJPATest {
         flyway.clean();
         flyway.migrate();
     }
+    
     @Test
     public void should_return_employee_when_input_employee_name() {
         //1.查询名字是小红的employee
