@@ -1,47 +1,38 @@
 package com.example.employee.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-@Table(name="employee")
+@Table(name ="Employee")
 public class Employee {
-    //主键自增
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
 
-    @Column(nullable = false)
+    @Id
+    @Column(name = "id", nullable = false)
+    private Integer id;
+
+    @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "age", nullable = false)
+    private Integer age;
+
+    @Column(name = "gender")
     private String gender;
 
-    @Column(nullable = false)
-    private int age;
+    @Column(name = "companyId", nullable = false)
+    private Integer companyId;
 
-    @JoinColumn(name = "company")
-    @Column(nullable = false)
-    private int companyId;
-
-    @Column(nullable = false)
+    @Column(name = "salary", nullable = false)
     private Integer salary;
 
-    public Employee() {
-    }
-
-    public Employee(String name, int id, String gender, int age, int companyId, int salary) {
-        this.id = id;
-        this.name = name;
-        this.gender = gender;
-        this.age = age;
-        this.companyId = companyId;
-        this.salary = salary;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -53,6 +44,14 @@ public class Employee {
         this.name = name;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     public String getGender() {
         return gender;
     }
@@ -61,19 +60,11 @@ public class Employee {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(int companyId) {
+    public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
     }
 
