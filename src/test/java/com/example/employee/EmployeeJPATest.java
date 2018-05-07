@@ -33,11 +33,11 @@ public class EmployeeJPATest {
     public void setUp() throws Exception {
         //本地启动mysql，创建employee_db数据库
         Flyway flyway = new Flyway();
-        flyway.setDataSource("jdbc:mysql://localhost:3306/employee_db","root","dev");
+        flyway.setDataSource("jdbc:mysql://localhost:3306/employee_db","root","root");
         flyway.clean();
         flyway.migrate();
     }
-    
+
     @Test
     public void should_return_employee_when_input_employee_name() {
         //1.查询名字是小红的employee
