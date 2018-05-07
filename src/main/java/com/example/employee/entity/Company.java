@@ -6,23 +6,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="Company")
+@Table(name="Company")
 public class Company {
     @Id
-    @Column(name = "id", nullable = false)
-    private Integer id;
+    private int id;
 
-    @Column(name = "companyName", nullable = false)
+    @Column(nullable = false)
     private String companyName;
 
-    @Column(name = "employeesNumber", nullable = false)
-    private String employeesNumber;
+    @Column(nullable = false)
+    private int employeesNumber;
 
-    public Integer getId() {
+    public Company() {
+    }
+
+    public Company(int id, String companyName, int employeesNumber) {
+        this.id = id;
+        this.companyName = companyName;
+        this.employeesNumber = employeesNumber;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,11 +42,11 @@ public class Company {
         this.companyName = companyName;
     }
 
-    public String getEmployeesNumber() {
+    public int getEmployeesNumber() {
         return employeesNumber;
     }
 
-    public void setEmployeesNumber(String employeesNumber) {
+    public void setEmployeesNumber(int employeesNumber) {
         this.employeesNumber = employeesNumber;
     }
 }
